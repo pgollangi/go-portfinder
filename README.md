@@ -1,2 +1,2 @@
 # go-portfinder
-Go implementation of [node-portfinder](https://github.com/http-party/node-portfinder). A simple tool to find an open port on the current machine
+Go implementation of [node-portfinder](https://www.npmjs.com/package/portfinder). A simple tool to find an open port on the current machine.
