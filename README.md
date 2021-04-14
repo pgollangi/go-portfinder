@@ -1,8 +1,8 @@
 [![build](https://github.com/pgollangi/go-portfinder/actions/workflows/build.yml/badge.svg)](https://github.com/pgollangi/go-portfinder/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/pgollangi/go-portfinder/branch/main/graph/badge.svg?token=MI1VM2O6AU)](https://codecov.io/gh/pgollangi/go-portfinder)
-
-[![Go Report Card](https://goreportcard.com/badge/github.com/pgollangi/fastget)](https://goreportcard.com/report/github.com/pgollangi/fastget)
+[![Go Report Card](https://goreportcard.com/badge/github.com/pgollangi/go-portfinder)](https://goreportcard.com/report/github.com/pgollangi/go-portfinder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/032b766c28546267c545/maintainability)](https://codeclimate.com/github/pgollangi/go-portfinder/maintainability)
+![License: MIT](https://img.shields.io/github/license/pgollangi/go-portfinder)
 # go-portfinder
 Go implementation of [node-portfinder](https://www.npmjs.com/package/portfinder). A simple tool to find an open port on the current machine.
 
