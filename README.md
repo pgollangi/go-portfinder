@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/032b766c28546267c545/maintainability)](https://codeclimate.com/github/pgollangi/go-portfinder/maintainability)
 ![License: MIT](https://img.shields.io/github/license/pgollangi/go-portfinder)
 # go-portfinder
-Go implementation of [node-portfinder](https://www.npmjs.com/package/portfinder). A simple tool to find an open port on the current machine.
+Go implementation of npm [portfinder](https://www.npmjs.com/package/portfinder). A simple tool to find an open port on the current machine.
 
 Installation
 --------------
