@@ -38,7 +38,7 @@ func IsPortInUse(host string, port int, timeout time.Duration) bool {
 
 // GetPort search for open port in the range provided
 func GetPort(options PortFinderOptions) (int, error) {
-	if options.StartPort < 0 {
+	if options.StartPort <= 0 {
 		return -1, fmt.Errorf("Provided options.startPort(%d) is less than 0, which are cannot be bound.", options.StartPort)
 	}
 	if options.StopPort < options.StartPort {
