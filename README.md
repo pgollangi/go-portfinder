@@ -22,7 +22,7 @@ import (
 )
 
 func main(){
-     // scan localhost with a 2 second timeout per port in 5 concurrent threads
+     // scans and returns first open port on all network interfaces of current machine.
      openPort, err := portfinder.GetPort(PortFinderOptions {
          StartPort: 9090,
          StopPort: 9099
