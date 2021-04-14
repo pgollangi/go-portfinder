@@ -29,7 +29,7 @@ func TestGetPort(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	port, err := GetPort(PortFinderOptions{
+	port, err := GetPort(&PortFinderOptions{
 		StartPort: 3000,
 		StopPort:  3005,
 	})
