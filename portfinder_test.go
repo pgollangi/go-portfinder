@@ -6,18 +6,18 @@ import (
 )
 
 func TestValidateStartPort(t *testing.T) {
-	_, err := GetPort(PortFinderOptions{})
+	_, err := GetPort(&PortFinderOptions{})
 	if err == nil {
 		t.Fail()
 	}
-	_, err = GetPort(PortFinderOptions{StartPort: -1})
+	_, err = GetPort(&PortFinderOptions{StartPort: -1})
 	if err == nil {
 		t.Fail()
 	}
 }
 
 func TestValidateStopPort(t *testing.T) {
-	_, err := GetPort(PortFinderOptions{StartPort: 10, StopPort: 9})
+	_, err := GetPort(&PortFinderOptions{StartPort: 10, StopPort: 9})
 	if err == nil {
 		t.Fail()
 	}
