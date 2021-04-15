@@ -8,6 +8,8 @@ import (
 	"time"
 )
 
+const DEFAULT_TIMEOUT = 3 * time.Second
+
 // PortFinderOptions are the options passed to GetPort
 type PortFinderOptions struct {
 	//Host to find available port on.
@@ -36,7 +38,23 @@ func IsPortInUse(host string, port int, timeout time.Duration) bool {
 	return true
 }
 
-// GetPort search for open port in the range provided
+// IsPortOpen checks if given port is open on all network interfaces of current machine.
+func IsPortOpen(port int) (bool, error) {
+	allAddrs, err := localAddresses()
+	if err != nil {
+		return false, err
+	}
+	for _, ip := range allAddrs {
+		addr := ip.String()
+		inUse := IsPortInUse(addr, port, DEFAULT_TIMEOUT)
+		if inUse {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
+// GetPort search for open port in the range provided on all the network interfaces of the current machine
 func GetPort(options *PortFinderOptions) (int, error) {
 	if options.StartPort <= 0 {
 		return -1, fmt.Errorf("Provided options.startPort(%d) is less than 0, which are cannot be bound.", options.StartPort)
@@ -58,7 +76,7 @@ SEARCHPORT:
 			wg.Add(1)
 			func() {
 				defer wg.Done()
-				inUse := IsPortInUse(addr, openPort, 3*time.Second)
+				inUse := IsPortInUse(addr, openPort, DEFAULT_TIMEOUT)
 				results <- inUse
 			}()
 		}

@@ -36,5 +36,26 @@ func TestGetPort(t *testing.T) {
 	if port != 3001 {
 		t.Fail()
 	}
+}
 
+func TestIsOpen(t *testing.T) {
+	isOpen, err := IsPortOpen(9999)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isOpen != true {
+		t.Fail()
+	}
+	l, err := net.Listen("tcp", ":9999")
+	defer l.Close()
+	if err != nil {
+		t.Fatal(err)
+	}
+	isOpen, err = IsPortOpen(9999)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if isOpen != false {
+		t.Fail()
+	}
 }

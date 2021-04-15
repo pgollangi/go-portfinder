@@ -27,6 +27,9 @@ func main(){
          StartPort: 9090,
          StopPort: 9099
      })
+
+    // Check if a port is open
+    isOpen, err := portfinder.IsOpen(8080)
 }
 
 
