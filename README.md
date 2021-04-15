@@ -10,7 +10,7 @@ Installation
 --------------
 
 ```bash
-$ go get github.com/pgollang/go-portfinder
+$ go get github.com/pgollangi/go-portfinder
 ```
 # Usage
 
@@ -18,7 +18,7 @@ $ go get github.com/pgollang/go-portfinder
 package main
 
 import (
-	"github.com/pgollang/go-portfinder"
+	"github.com/pgollangi/go-portfinder"
 )
 
 func main(){
