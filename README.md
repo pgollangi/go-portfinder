@@ -35,4 +35,4 @@ func main(){
 
 ```
 ## Author
-Built with ❤ by [Prasanna Kumar](https://pgollangi.com/tabs/about/)
+Built with ❤ by [Prasanna Kumar](https://p11r.dev/)
